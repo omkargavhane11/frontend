@@ -24,7 +24,7 @@ export function Login() {
                 <button
                     className="btn"
                     onClick={() => {
-                        fetch(`${API}/users/${username}`, { method: "POST" })
+                        fetch(`${API}/users/${username}`, { method: "GET" })
                             .then((res) => res.json())
                             .then((mv) => {
                                 if (mv[0].username === username && mv[0].password === password) {
