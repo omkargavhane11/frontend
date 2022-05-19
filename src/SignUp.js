@@ -36,16 +36,16 @@ export function SignUp() {
                             email: email,
                             password: password
                         }
-                        if (getUserByUsername) {
-                            fetch(`${API}/users`, {
-                                method: "POST",
-                                body: JSON.stringify(newUser),
-                                headers: {
-                                    "Content-Type": "application/json",
-                                },
-                            }).then((data) => data.json())
-                                .then(() => navigate("/login"))
-                        }
+
+                        fetch(`${API}/users`, {
+                            method: "POST",
+                            body: JSON.stringify(newUser),
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        }).then((data) => data.json())
+                            .then(() => navigate("/login"))
+
 
                     }
                     }
