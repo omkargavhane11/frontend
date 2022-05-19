@@ -9,7 +9,7 @@ export function Todos() {
     const navigate = useNavigate();
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch(`${API}/todo?username=${username}`, { method: "GET" })
+        fetch(`${API}/todo/${username}`, { method: "GET" })
             .then((res) => res.json())
             .then((mv) => setData(mv))
     }, [data])
