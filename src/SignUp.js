@@ -11,6 +11,14 @@ export function SignUp() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
+    const getUserByUsername = () => {
+        fetch(`${API}/users/${username}`, { method: "GET" })
+            .then((res) => res.json())
+            .then((mv) => setData(mv));
+    }
+
+
+
     return (
         <div className="signup">
             <div className="signup_form">
@@ -28,15 +36,17 @@ export function SignUp() {
                             email: email,
                             password: password
                         }
-                        console.log(newUser)
-                        fetch(`${API}/users`, {
-                            method: "POST",
-                            body: JSON.stringify(newUser),
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                        }).then((data) => data.json())
-                            .then(() => navigate("/login"));
+                        if (getUserByUsername) {
+                            fetch(`${API}/users`, {
+                                method: "POST",
+                                body: JSON.stringify(newUser),
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                            }).then((data) => data.json())
+                                .then(() => navigate("/login"))
+                        }
+
                     }
                     }
                 >Sign Up</button>
