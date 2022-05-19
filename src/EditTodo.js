@@ -18,8 +18,6 @@ export function EditTodo() {
 
     return (
         <div className="edit_todo_parent">
-
-
             <div className="edit_todo_container">
                 <p>heading</p>
                 <input
@@ -53,7 +51,6 @@ export function EditTodo() {
                             .then((data) => navigate(`/todo/${data.username}`))
                     }}
                 >Save</button>
-
             </div >
         </div>
     );

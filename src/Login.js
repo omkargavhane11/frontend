@@ -14,6 +14,11 @@ export function Login() {
     //         .then((res) => res.json())
     //         .then((mv) => setData(mv));
     // }, [])
+    const getUserByUsername = () => {
+        fetch(`${API}/users/${username}`, { method: "GET" })
+            .then((res) => res.json())
+            .then((mv) => setData(mv));
+    }
 
     return (
         <div className="signup">
@@ -24,15 +29,13 @@ export function Login() {
                 <button
                     className="btn"
                     onClick={() => {
-                        fetch(`${API}/users/${username}`, { method: "GET" })
-                            .then((res) => res.json())
-                            .then((mv) => {
-                                if (mv[0].username === username && mv[0].password === password) {
-                                    navigate(`/todo/${username}`)
-                                } else {
-                                    return alert('invalid credentials')
-                                }
-                            });
+                        getUserByUsername();
+                        if (data.username = username && data.password === password) {
+                            navigate(`todo/${username}`)
+                        }
+                        else {
+                            return alert("invalid credentials")
+                        }
                     }}
                 >Login</button>
             </div>
