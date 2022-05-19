@@ -19,36 +19,24 @@ export function TodoSingle({ todo, setData, data }) {
 
     return (
         <div className="single_todo">
-            <p className="todo_heading">{todo ? todo.heading : ""}</p>
-            <div className="todo_description">{todo ? todo.description : ""}</div>
-            <div>
-                <button
-                    onClick={() => {
-                        navigate(`/todo/edit/${todo._id}`);
-                        console.log(todo);
-                    }}
-                    className="todo_edit_button">Edit
-                </button>
-
-                {/* <button onClick={() => {
-                let temp = data;
-                let result = temp.filter((m) => m.id !== id);
-                setData(result);
-            }} className="todo_delete_btn">Delete
-            </button> */}
-
-                <button onClick={() => {
-                    fetch(`${API}/todo/edit/${todo._id}`, { method: "DELETE" }).then(() => navigate(`/todo/${username}`))
-                    // console.log(todo._id);
-                }} className="todo_delete_btn">Delete
-                </button>
-
-                {/* <button onClick={() => {
-                console.log(todo._id);
-            }} className="todo_delete_btn">Delete
-            </button> */}
-
+            <div className="header_todo">
+                <p className="todo_heading">{todo ? todo.heading : ""}</p>
+                <div>
+                    <button
+                        onClick={() => {
+                            navigate(`/todo/edit/${todo._id}`);
+                            console.log(todo);
+                        }}
+                        className="todo_edit_button">Edit
+                    </button>
+                    <button onClick={() => {
+                        fetch(`${API}/todo/edit/${todo._id}`, { method: "DELETE" }).then(() => navigate(`/todo/${username}`))
+                    }} className="todo_delete_btn">Delete
+                    </button>
+                </div>
             </div>
+
+            <div className="todo_description">{todo ? todo.description : ""}</div>
         </div>
     );
 }
