@@ -37,7 +37,7 @@ export function SignUp() {
                             password: password
                         }
                         getUserByUsername()
-                        if (data[0].username !== username && data[0].password !== password && data[0].email !== email) {
+                        if (data[0].username !== username && data[0].email !== email) {
                             fetch(`${API}/users`, {
                                 method: "POST",
                                 body: JSON.stringify(newUser),
