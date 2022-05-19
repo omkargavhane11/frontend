@@ -196,3 +196,21 @@ display: flex;
     justify-content: space-between;
     align-items: center;
   }
+  .edit_todo_container{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    padding:15px 0px;
+    width: 300px;
+    /* margin-top: 50px; */
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+  }
+  .edit_save_bn{
+    margin-top:9px;
+  }
+  .edit_todo_parent{
+    padding-top: 50px;
+    background-color: rgb(226, 226, 226);
+    height: 100vh;
+  }

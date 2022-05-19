@@ -13,36 +13,48 @@ export function EditTodo() {
             .then((data) => setData(data));
     }, [])
 
-    const [heading, setHeading] = useState(data.heading);
-    const [description, setDescription] = useState(data.description);
+    const [Heading, setHeading] = useState(data.heading ? data.heading : "")
+    const [Description, setDescription] = useState(data.description);
 
-    console.log(data);
     return (
-        <div className="edit_todo_container">
-            <p>heading</p>
-            <input
-                type="text"
-                value={heading ? heading : ""}
-                placeholder={heading ? heading : ""}
-                onChange={(e) => setHeading(e.target.value)}
-            >
-            </input>
-            <p>Description</p>
-            <input
-                type="text"
-                value={description ? description : ""}
-                placeholder={description ? description : ""}
-                onChange={(e) => setDescription(e.target.value)}
-            >
-            </input>
-            <button
-                onClick={() => {
-                    fetch(`${API}/todo/edit/${id}`, { method: "PUT" })
-                        .then((res) => res.json())
-                        .then((data) => navigate("/todo/omkar"))
-                }}
-            >Save</button>
+        <div className="edit_todo_parent">
 
+
+            <div className="edit_todo_container">
+                <p>heading</p>
+                <input
+                    type="text"
+                    onChange={(e) => setHeading(e.target.value)}
+                    value={Heading ? Heading : ""}
+                >
+                </input>
+                <p>Description</p>
+                <input
+                    type="text"
+                    onChange={(e) => setDescription(e.target.value)}
+                    value={Description ? Description : ""}
+                >
+                </input>
+                <br />
+                <button
+                    className='edit_save_bn'
+                    onClick={() => {
+                        let dataEdit = {
+                            heading: Heading,
+                            description: Description
+                        }
+                        fetch(`${API}/todo/edit/${id}`, {
+                            method: "PUT", headers: {
+                                'Content-type': 'application/json'
+                            },
+                            body: JSON.stringify(dataEdit)
+                        })
+                            .then((res) => res.json())
+                            .then((data) => navigate(`/todo/${data.username}`))
+                    }}
+                >Save</button>
+
+            </div >
         </div>
     );
 }
