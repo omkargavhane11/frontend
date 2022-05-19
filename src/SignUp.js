@@ -36,17 +36,19 @@ export function SignUp() {
                             email: email,
                             password: password
                         }
-
-                        fetch(`${API}/users`, {
-                            method: "POST",
-                            body: JSON.stringify(newUser),
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                        }).then((data) => data.json())
-                            .then(() => navigate("/login"))
-
-
+                        getUserByUsername()
+                        if (data[0].username !== username && data[0].password !== password && data[0].email !== email) {
+                            fetch(`${API}/users`, {
+                                method: "POST",
+                                body: JSON.stringify(newUser),
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                            }).then((data) => data.json())
+                                .then(() => navigate("/login"))
+                        } else {
+                            return alert("User already exixts")
+                        }
                     }
                     }
                 >Sign Up</button>

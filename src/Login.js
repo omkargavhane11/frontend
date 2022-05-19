@@ -30,7 +30,7 @@ export function Login() {
                                 if (mv[0].username === username && mv[0].password === password) {
                                     navigate(`/todo/${username}`)
                                 } else {
-                                    alert('invalid credentials')
+                                    return alert('invalid credentials')
                                 }
                             });
                     }}
