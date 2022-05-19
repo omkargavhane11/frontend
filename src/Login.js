@@ -29,9 +29,9 @@ export function Login() {
                 <button
                     className="btn"
                     onClick={() => {
-                        getUserByUsername();
-                        if (data.username = username && data.password === password) {
-                            navigate(`todo/${username}`)
+                        getUserByUsername()
+                        if (data[0].username === username && data[0].password === password) {
+                            navigate(`/todo/${username}`)
                         }
                         else {
                             return alert("invalid credentials")
