@@ -32,7 +32,6 @@ export function Login() {
                                 } else {
                                     alert('invalid credentials')
                                 }
-                                // console.log(mv[0])
                             });
                     }}
                 >Login</button>
