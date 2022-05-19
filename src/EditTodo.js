@@ -10,27 +10,29 @@ export function EditTodo() {
     useEffect(() => {
         fetch(`${API}/todo/edit/${id}`, { method: "GET" })
             .then((res) => res.json())
-            .then((data) => setData(data));
+            .then((mu) => setData(mu));
     }, [])
-
+    console.log(data);
     const [Heading, setHeading] = useState(data.heading ? data.heading : "")
-    const [Description, setDescription] = useState(data.description);
+    const [Description, setDescription] = useState(data.description ? data.description : "");
 
     return (
         <div className="edit_todo_parent">
             <div className="edit_todo_container">
                 <p>heading</p>
                 <input
-                    type="text"
+
                     onChange={(e) => setHeading(e.target.value)}
-                    value={Heading ? Heading : ""}
+                    value={Heading}
+                    placeholder={Heading}
                 >
                 </input>
                 <p>Description</p>
                 <input
-                    type="text"
+
                     onChange={(e) => setDescription(e.target.value)}
-                    value={Description ? Description : ""}
+                    value={Description}
+                    placeholder={Description}
                 >
                 </input>
                 <br />

@@ -25,7 +25,6 @@ export function TodoSingle({ todo, setData, data }) {
                     <button
                         onClick={() => {
                             navigate(`/todo/edit/${todo._id}`);
-                            console.log(todo);
                         }}
                         className="todo_edit_button">Edit
                     </button>
