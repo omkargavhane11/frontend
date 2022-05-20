@@ -13,7 +13,7 @@ export function TodoSingle({ todo, setData, data }) {
     //         .then((data) => setTodo(data));
     // }, [])
 
-
+    const [edit, SetEdit] = useState(true);
 
 
 
