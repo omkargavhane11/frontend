@@ -11,9 +11,9 @@
 
 .signup {
   height: 100vh;
-  width: 330px;
-  /* margin-left: auto;
-  margin-right: auto; */
+  /* width: 330px; */
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 70px;
   /* background-color:red; */
 }
@@ -27,8 +27,8 @@
   height: auto;
   width: 280px;
   border-radius: 10px;
-  /* margin-left:auto; */
-  /* margin-left:45px;; */
+  margin-left:auto; 
+  margin-left:45px;
   padding: 30px 30px;
   padding-left: auto;
   margin-left: 15px;
