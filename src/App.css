@@ -3,44 +3,52 @@
   /* flex-direction: column; */
 
   text-align: center;
-  /* background-color: rgb(219, 219, 219); */
+  background-color: rgb(162, 146, 146);
   /* height: 100%; */
   
 
 }
 .signup{
   height: 100vh;
+  width:330px;
+  /* margin-left: auto;
+  margin-right: auto; */
   padding-top:70px;
+  /* background-color:red; */
 }
 .signup_form{
   display:flex;
   flex-direction: column;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
   height:auto;
-  width:350px;
+  width:280px;
   border-radius: 10px;
   /* margin-left:auto; */
-  margin:auto;
+  /* margin-left:45px;; */
   padding: 30px 30px;
+padding-left: auto;
+margin-left: 15px;
   border:1 px solid rgb(124, 124, 124);
   background-color: rgb(217, 217, 217);
  
 }
 
 
-@media screen and (max-width: 440px) {
-  .signup{
+@media screen and (min-width: 440px) {
+  /* .signup{
     display:flex;
   flex-direction: column;
-  height:auto;
+  height:500px;
   width:300px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
-  /* margin-left:auto; */
+  margin-left:auto;
   margin:auto;
   padding: 30px 30px;
-  }
-  
-}
+  }  */
+} 
 .input{
   /* width:250px; */
   font-size:15px;
