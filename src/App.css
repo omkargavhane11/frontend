@@ -11,7 +11,7 @@
 
 .signup {
   display: flex;
-  height: 100vh;
+  height: auto;
   /* padding-top: 70px; */
   /* margin: auto; */
   justify-content: center;
