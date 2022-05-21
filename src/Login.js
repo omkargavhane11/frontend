@@ -36,6 +36,7 @@ export function Login() {
                     className="btn"
                     onClick={() => {
                         getUserByUsername()
+                        console.log(data);
 
                         if (data[0].username === username && data[0].password === password) {
                             setLoginAlert(false)
