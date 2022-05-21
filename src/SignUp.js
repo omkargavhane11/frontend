@@ -20,6 +20,7 @@ export function SignUp() {
 
 
     return (
+
         <div className="signup">
             <div className="signup_form">
                 <h3>Sign up for your account</h3>
@@ -56,5 +57,6 @@ export function SignUp() {
                 <p className="login_link_div">Already have an account ?<span onClick={() => navigate("/login")} className="login_link link">Login</span></p>
             </div>
         </div>
+
     );
 }
